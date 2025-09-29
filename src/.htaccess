@@ -1,0 +1,23 @@
+DirectoryIndex index.php
+
+# Configuración para rewrite URLs (opcional para futuras mejoras)
+RewriteEngine On
+
+# Redirigir todas las extensiones .php para URLs limpias (opcional)
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Configuración de seguridad
+# Prevenir acceso directo a archivos sensibles
+<Files "*.log">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Headers de seguridad
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>

@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos personalizados para la máquina expendedora */
+@layer components {
+  .vending-card {
+    @apply bg-white rounded-lg shadow-lg p-6 border border-gray-200;
+  }
+
+  .vending-button {
+    @apply bg-vending-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200;
+  }
+
+  .vending-button-secondary {
+    @apply bg-vending-secondary hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200;
+  }
+
+  .product-slot {
+    @apply border-2 border-gray-300 rounded-lg p-4 hover:border-vending-primary transition-colors duration-200 cursor-pointer;
+  }
+
+  .coin-slot {
+    @apply bg-gradient-to-b from-gray-300 to-gray-500 rounded-full shadow-inner;
+  }
+}
+
+/* Animaciones personalizadas */
+@keyframes dispense {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+}
+
+.dispense-animation {
+  animation: dispense 1s ease-in-out;
+}

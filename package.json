@@ -1,0 +1,30 @@
+{
+  "name": "proyecto-maquina-expendedora",
+  "version": "1.0.0",
+  "description": "Proyecto base con Tailwind CSS y jQuery",
+  "main": "resources/js/app.js",
+  "scripts": {
+    "start": "node resources/js/app.js",
+    "dev": "node resources/js/app.js",
+    "build": "tailwindcss -i ./resources/css/input.css -o ./resources/css/output.css --watch",
+    "build-css": "tailwindcss -i ./resources/css/input.css -o ./resources/css/output.css",
+    "build-css-prod": "tailwindcss -i ./resources/css/input.css -o ./resources/css/output.css --minify"
+  },
+  "keywords": [
+    "tailwind",
+    "jquery",
+    "javascript",
+    "css",
+    "frontend"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "autoprefixer": "^10.4.16"
+  }
+}
